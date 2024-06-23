@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Force</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+        }
+
+        header img {
+            max-width: 100px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            background-color: #444;
+            padding: 10px;
+            color: white;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        nav .menu {
+            display: flex;
+        }
+
+        nav .search {
+            display: flex;
+        }
+
+        nav input[type="text"] {
+            padding: 5px;
+            margin-right: 5px;
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .main-content {
+            flex: 3;
+            padding: 20px;
+        }
+
+        aside {
+            flex: 1;
+            background-color: #e4e4e4;
+            padding: 20px;
+        }
+
+        aside h2 {
+            margin-top: 0;
+        }
+
+        aside table {
+            width: 100%;
+        }
+
+        aside button {
+            width: 100%;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Specific Section Styles */
+        .home,
+        .products,
+        .register,
+        .about {
+            display: none;
+        }
+
+        .home h1,
+        .products h1,
+        .register h1,
+        .about h1 {
+            color: #333;
+        }
+
+        .products img,
+        .home img {
+            width: 150px;
+            height: 150px;
+            margin: 10px;
+        }
+
+        form label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        form input,
+        form select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 15px;
+        }
+
+        form button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .active {
+            display: block !important;
+        }
+    </style>
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('main > section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+                if (section.id === sectionId) {
+                    section.classList.add('active');
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const links = document.querySelectorAll('nav a');
+            links.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const sectionId = e.target.getAttribute('href').substring(1);
+                    showSection(sectionId);
+                });
+            });
+
+            // Show home section by default
+            showSection('home');
+        });
+    </script>
+</head>
+
+<body>
+    <header>
+        <img src="imagenes/Logo Ecommerce.jpg" alt="Computer Force Logo">
+    </header>
+    <nav>
+        <div class="menu">
+            <a href="#home">Home</a>
+            <a href="#products">Products</a>
+            <a href="#register">Register</a>
+            <a href="#about">About</a>
+        </div>
+        <div class="search">
+            <input type="text" placeholder="Search">
+            <button>Search</button>
+        </div>
+    </nav>
+    <main>
+        <section id="home" class="home active">
+            <div class="main-content">
+                <h1>Welcome to Computer Force</h1>
+                <p>Computer Force is your online expert in all things computing.</p>
+                <h2>Computers</h2>
+                <img src="C:\Users\USER\Documents\Ecommerce Assesment\imagenes\computer1.jpg" alt="Computers">
+                <h2>Laptops</h2>
+                <img src="C:\Users\USER\Documents\Ecommerce Assesment\imagenes\laptop1.jpg" alt="Laptops">
+                <h2>Monitors</h2>
+                <img src="imagenes/monitor1.jpg" alt="Monitors">
+                <h2>Printing & Scanning</h2>
+                <img src="imagenes/priting&scanning.jpg" alt="Printing & Scanning">
+                <h2>Software</h2>
+                <img src="imagenes/software1.jpg" alt="Software">
+                <h2>Tablets</h2>
+                <img src="imagenes/tablet1.webp" alt="Tablets">
+            </div>
+            <aside>
+                <h2>Purchases</h2>
+                <table>
+                    <tr>
+                        <td>0 items.</td>
+                        <td>Cart sub-total: $0.</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><button>Go to Checkout</button></td>
+                    </tr>
+                </table>
+            </aside>
+        </section>
+        <section id="products" class="products">
+            <div class="main-content">
+                <h1>Products we sell</h1>
+                <p>Computer Force sells products in the following categories:</p>
+                <h2>Audio</h2>
+                <img src="imagenes/audio1.webp" alt="Audio">
+                <h2>Computers</h2>
+                <img src="imagenes/computer1.jpg" alt="Computers">
+                <h2>Graphics Cards</h2>
+                <img src="imagenes/grapicsCards1.jpg" alt="Graphics Cards">
+                <h2>Keyboard and Mice</h2>
+                <img src="imagenes/keyboard1.jpeg" alt="Keyboard and Mice">
+                <h2>Laptops</h2>
+                <img src="imagenes/laptop1.jpg" alt="Laptops">
+                <h2>Monitors</h2>
+                <img src="imagenes/monitor1.jpg" alt="Monitors">
+                <h2>Networking</h2>
+                <img src="imagenes/networking1.avif" alt="Networking">
+                <h2>Peripherals</h2>
+                <img src="imagenes/peripherals1.jpg" alt="Peripherals">
+                <h2>Printing & Scanning</h2>
+                <img src="imagenes/priting&scanning.jpg" alt="Printing & Scanning">
+                <h2>Software</h2>
+                <img src="imagenes/software1.jpg" alt="Software">
+                <h2>Storage</h2>
+                <img src="imagenes/storage1.webp" alt="Storage">
+                <h2>Tablets</h2>
+                <img src="imagenes/tablet1.webp" alt="Tablets">
+            </div>
+            <aside>
+                <h2>Purchases</h2>
+                <table>
+                    <tr>
+                        <td>0 items.</td>
+                        <td>Cart sub-total: $0.</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><button>Go to Checkout</button></td>
+                    </tr>
+                </table>
+            </aside>
+        </section>
+        <section id="register" class="register">
+            <div class="main-content">
+                <h1>Registration Form</h1>
+                <p>Please complete the following form to register for an account on our website.</p>
+                <form action="#" method="POST">
+                    <label for="username">Username*</label>
+                    <input type="text" id="username" name="username" required>
+                    <label for="email">Email Address*</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="password">Password*</label>
+                    <input type="password" id="password" name="password" required>
+                    <label for="confirm-password">Confirm Password*</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required>
+                    <label for="first-name">First Name*</label>
+                    <input type="text" id="first-name" name="first-name" required>
+                    <label for="surname">Surname*</label>
+                    <input type="text" id="surname" name="surname" required>
+                    <label for="gender">Gender*</label>
+                    <select id="gender" name="gender" required>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" id="dob" name="dob">
+                    <label for="address">Address*</label>
+                    <input type="text" id="address" name="address" required>
+                    <label for="suburb">Suburb*</label>
+                    <input type="text" id="suburb" name="suburb" required>
+                    <label for="postcode">Postcode*</label>
+                    <input type="text" id="postcode" name="postcode" required>
+                    <label for="state">State*</label>
+                    <select id="state" name="state" required>
+                        <option value="ACT">ACT</option>
+                        <option value="NSW">NSW</option>
+                        <option value="NT">NT</option>
+                        <option value="QLD">QLD</option>
+                        <option value="SA">SA</option>
+                        <option value="TAS">TAS</option>
+                        <option value="VIC">VIC</option>
+                        <option value="WA">WA</option>
+                    </select>
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone">
+                    <button type="reset">Clear</button>
+                    <button type="submit">Register</button>
+                </form>
+            </div>
+            <aside>
+                <h2>Purchases</h2>
+                <table>
+                    <tr>
+                        <td>0 items.</td>
+                        <td>Cart sub-total: $0.</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><button>Go to Checkout</button></td>
+                    </tr>
+                </table>
+            </aside>
+        </section>
+        <section id="about" class="about">
+            <div class="main-content">
+                <h1>About Computer Force</h1>
+                <p>Computer Force is a brand-new start-up company designed to provide first-class service to its customers. Based in Parramatta in Sydney, Computer Force provides top-class computing products at bargain prices, for sale throughout Australia.</p>
+                <h2>Our goals are:</h2>
+                <ul>
+                    <li>To become Australia’s most well-known and respected hardware and software provider</li>
+                    <li>To create a service-based organization whose goal is to exceed customers' expectations</li>
+                    <li>To provide a smooth, efficient, and transparent sales process</li>
+                </ul>
+                <p>You can contact us using the following methods:</p>
+                <ul>
+                    <li>Address: 100 Main Road, Parramatta, NSW 20150</li>
+                    <li>Email: info@computerforce.com.au</li>
+                    <li>Phone: 02 4444 5555</li>
+                </ul>
+            </div>
+            <aside>
+                <h2>Purchases</h2>
+                <table>
+                    <tr>
+                        <td>0 items.</td>
+                        <td>Cart sub-total: $0.</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><button>Go to Checkout</button></td>
+                    </tr>
+                </table>
+            </aside>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Your Name</p>
+    </footer>
+</body>
+
+</html>
+
